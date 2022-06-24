@@ -1,0 +1,161 @@
+/*=== VAR ===*/
+:root {
+    --ModerateViolet: hsl(263, 55%, 52%);
+    --VeryDarkGrayIshblue: hsl(217, 19%, 35%);
+    --VeryDarkBlackIshblue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    --Lightgray: hsl(0, 0%, 81%);
+    --LightGrayIshblue: hsl(210, 46%, 95%);
+    /* Note for text colors:
+    1. "Verified Graduate" has the same color as the person's name with 50% opacity
+    2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+}
+/* === Attribution === */
+.attribution {
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 700;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: var(--DarkBlue);
+    opacity: 0;
+}
+
+.attribution:hover {
+    opacity: 1;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+/* === CHALLENGE === */
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--LightGrayIshblue);
+    padding: 1rem 1.5rem;
+    margin: 0;
+}
+main {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "daniel daniel jonathan kira"
+        "jeanette patrick patrick kira";
+    gap: 1.5rem;
+    max-width: 66rem;
+    transform: scale(0.9);
+}
+main > article {
+    padding: 1.4rem;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px -10px rgba(0, 0, 0, 0.2);
+}
+main p {
+    font-weight: 500;
+}
+main h3 {
+    font-size: 1.2rem;
+    margin: 6px 0;
+}
+main > article p:first-of-type {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: super;
+}
+main > article p:first-of-type::after {
+    content: "Verified Graduate";
+    display: block;
+    color: var(--White);
+    opacity: 0.5;
+}
+main > article p:last-of-type {
+    opacity: 0.7;
+}
+main article img {
+    width: 2rem;
+    border-radius: 50%;
+    outline: 2px solid var(--White);
+}
+.daniel {
+    grid-area: daniel;
+    color: var(--White);
+    background: var(--ModerateViolet) url("./images/bg-pattern-quotation.svg")
+        no-repeat 80% 0;
+}
+.daniel img {
+    outline: 2px solid hsl(263, 100%, 70%);
+}
+.jeanette {
+    grid-area: jeanette;
+    background-color: var(--White);
+    color: var(--VeryDarkBlackIshblue);
+}
+.jonathan {
+    grid-area: jonathan;
+    background-color: var(--VeryDarkGrayIshblue);
+    color: var(--White);
+}
+.kira {
+    grid-area: kira;
+    background-color: var(--White);
+    color: var(--VeryDarkBlackIshblue);
+}
+.kira p:first-of-type::after,
+.jeanette p:first-of-type::after {
+    color: var(--VeryDarkBlackIshblue);
+    opacity: 0.5;
+}
+.patrick {
+    grid-area: patrick;
+    background-color: var(--VeryDarkBlackIshblue);
+    color: var(--White);
+}
+.patrick img {
+    outline: 2px solid var(--ModerateViolet);
+}
+@media screen and (max-width: 58em) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "daniel daniel jonathan"
+            "jeanette patrick patrick"
+            "kira kira kira";
+    }
+    .attribution {
+        position: static;
+    }
+}
+@media screen and (max-width: 48em) {
+    main {
+        display: block;
+        transform: scale(1);
+    }
+    main > article {
+        margin: 1rem 0;
+    }
+    .attribution {
+        opacity: 1;
+    }
+}
+@media screen and (min-width: 1400px) {
+    main {
+        transform: scale(1.05);
+    }
+    main p {
+        font-size: 13px;
+    }
+    main h3 {
+        font-size: 1rem;
+    }
+    main article {
+        padding: 10px 30px;
+    }
+}
