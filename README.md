@@ -95,4 +95,4 @@ This challenge was a great learning opportunity, it was also very useful to rein
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 [live-page]: https://cosmoart.github.io/Testimonials-grid-section-solution/
-[solution-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[solution-url]: https://www.frontendmentor.io/solutions/testimonials-grid-section-solution-IfbCDH_Ipz
